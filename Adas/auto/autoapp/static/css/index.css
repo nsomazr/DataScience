@@ -1,0 +1,171 @@
+.container-fluid{
+margin-top:50px;
+background-color:white;
+background-attachment:fixed;
+}
+footer{
+ box-shadow: 2px 2px #f5f5f5;
+}
+/*#e0f2f1*/
+body{
+	background-color:#e1f5fe;
+	margin:0 auto;
+	padding:0;
+}
+.main-homev{
+margin-top:50px;
+}
+.forms{
+margin-top:90px;
+}
+.btnf{
+ box-shadow: 1px 1px #f5f5f5;
+}
+.btnf:hover{
+box-shadow: 2px 2px #f5f5f5;
+}
+.forms{
+   -webkit-border-radius:10px;
+}
+progress{
+   width:100px;
+   height:5px;
+}
+.forms:hover{
+ -webkit-box-shadow: -2px  2px #bbdefb;
+}
+.navbar-brand{
+	font-size: 30px;
+	text-shadow:3px 3px gray;
+    font-weight:bolder;
+}
+
+.padding{
+	padding-bottom: 2rem;
+}
+.welcome{
+	width: 75%;
+	margin: 0 auto;
+	padding-top: 2rem;
+}
+.welcome hr{
+	border-bottom: 2px solid #b4b4b4;
+	width: 95%;
+	margin-top: .3rem;
+}
+#lnk{
+	font-size:20px;
+	color: lightblue;
+}
+#lnk1{
+	font-size:20px;
+	color: lightblue;
+}
+#lnk4{
+	font-size:20px;
+	color: lightblue;
+}
+#lnk2{
+	font-size:20px;
+	color: lightblue;
+}
+#lnk3{
+	font-size:20px;
+	color: lightblue;
+}
+#lnk:hover{
+	color: black;
+	background-color:white;
+}
+#lnk1:hover{
+	color: black;
+	background-color:white;
+}
+#lnk2:hover{
+	color: black;
+	background-color:white;
+}
+#lnk3:hover{
+	color: black;
+	background-color:white;
+}
+#lnk4:hover{
+	color: black;
+	background-color:white;
+}
+.search{
+	width:350px;
+	margin:8px  0px 0px 0%;
+	position:fixed;
+
+}
+#qlink{
+	font-size:20px; 
+}
+
+.colsnames{
+    height: 200px;
+    overflow-y: auto;
+}
+   .dataframe td, .dataframe th{
+   	border-bottom: 1px solid white;
+   	/*text-align: center;*/
+   	padding:15px;
+   	direction :ltr
+   }
+   .dataframe{
+   	border-collapse: collapse;
+    border: 1px solid white;
+   }
+   .dataframe tr:nth-child(even){
+   background-color: rgba(246,246,246,.5);
+   }
+    .dataframe tr:nth-child(odd){
+     background-color: rgb(246,246,246);
+   }
+   .dataframe td{
+     width: 100px;
+     height: 100px;
+   }
+   .dataframe th{
+     width: 100px;
+     height: 50px;
+   }
+   .dataframe td:hover{
+     background-color:#e1f5fe !important;
+   }
+   .dataframe th:hover{
+     background-color:lightblue !important;
+   }
+   .dataframe th{
+     background-color:lightblue !important;
+   }
+   .dataframe tr:hover {
+background-color: #DFE7F2;
+color: #000;
+}
+.fa-chevron-right,.fa-chevron-left{
+margin-top:70%;
+}
+
+/*style dropdown*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    height:150px;
+    overflow-y:auto;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*end style dropdown*/

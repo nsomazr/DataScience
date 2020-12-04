@@ -1,0 +1,206 @@
+<!--<!DOCTYPE html>-->
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Adas</title>
+     <style type="text/css">
+
+     </style>
+    <!--<link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %}">
+  <script src="{% static 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' %}"></script>
+  <script src="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' %}"></script>
+    -->
+
+    <link href="{% static 'frameworks/bootstrap/dist/css/bootstrap.css' %}" type="text/css" rel="stylesheet">
+     <link href="{% static 'frameworks/bootstrap/dist/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'frameworks/font-awesome/css/font-awesome.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" type="text/css" rel="stylesheet">
+   <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+	<script type="text/javascript" src="{%  static 'frameworks/bootstrap/dist/js/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'frameworks/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script>
+
+     $(document).ready(function(){
+
+       $(".ebtn").hide();
+
+
+       $("input").click(function() {
+
+       var btnId=$(this).attr("id");
+       $(this).attr("type","text");
+       $("."+btnId).show();
+
+       });
+
+      $('.renamebtn').mouseenter(function(){
+            $('.ebtn').hide();
+           $(".ren").attr("type","button");
+      });
+
+     });
+
+    </script>
+</head>
+<body>
+ <div  class="container-fluid" style="margin-top:3em;">
+      <header>
+    	<nav  class="navbar navbar-default navbar-fixed-top">
+
+    		 <span class="navbar-header">
+    		 	<span class="navbar-brand" style="color:lightblue;">PARROTAI ADAS</span>
+    		 </span>
+
+    		      <ul class="nav navbar-nav">
+    		      	 <li><a href="{% url 'user_dashboard' %}" id="lnk"><i class="fa fa-home" style="padding-right:10px;"></i>Home</a>
+
+    		      	 <li>
+    		      	 	     <ul class="nav search navbar-right">
+                                    <li>
+    		      	 	<div class="input-group">
+    		      	 		<input type="search" name="search.html" class="form-control">
+    		      	 		<span class="input-group-addon">
+    		      	 		<a href=""><i class="fa fa-search"></i></a>
+    		      	 		</span>
+    		      	 	</div>
+                                    </li>
+    		      	 	</ul>
+    		      	 </li>
+
+    		      </ul>
+    	</nav>
+    	</header>
+
+
+     <main>
+         <div class="well">
+             <div class="pull-left">
+                <span><span class="text-left" style="color:lightblue; font-size:20px; border-right: 3px solid lightblue; padding-right:20px;">USER DASHBOARD</span></span>
+                <span class="pull-right" style="font-size:20px; color:lightblue;  margin-left:20px;"><span style="padding-right:20px;"><i class="fa fa-user"></i></span><span >{{ fname }}</span>{{ ' ' }}<span>{{ lname }}</span></span>
+            </div>
+             <div class="pull-right" style="margin-top:10px;">
+                 <div class="btn-group">
+                      <a href="{% url 'user_dashboard' %}" class="btn btn-info" title="Back"><i class="fa fa-arrow-left"></i></a>
+                     <a href="{% url 'upload' %}" class="btn btn-info" title="Upload Dataset"><i class="fa fa-upload"></i></a>
+                       <a href="{% url 'logout' %}" class="btn btn-danger" title="Logout"><i class="fa fa-sign-out"></i></a>
+                 </div>
+            </div>
+             <hr style="width:0;">
+             <div class="row main-homev">
+
+                 <div class="panel panel-info">
+                     <div class="panel-heading">
+                         <p class="text-center h3">
+                             CLEAN {{ dataset }}
+                         </p>
+                     </div>
+                 </div>
+
+
+                  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                      		     <div class=" dropdown">
+                                     <button class="btn btn-info" type="button">Handle Missing Values
+                                     </button>
+                                <div class="dropdown-content">
+                                    <nav>
+                               <div class="row">
+                        	<div class="col-md-12">
+                                <form>
+                                   <ul class="nav nav-stacked">
+                            <li><button class="btn btn-default" style="border:none; outline:none; width:250px; font-size:15px;">Remove</button></li><br>
+                            <li><button class="btn btn-default" style="border:none; outline:none; width:250px; font-size:15px;">Fill Mean</button></li><br>
+                            <li><button class="btn btn-default" style="border:none; outline:none; width:250px; font-size:15px;">Fill Median</button></li><br>
+                            <li><button class="btn btn-default" style="border:none; outline:none; width:250px; font-size:15px;">Fill Zero</button></li><br>
+                     	    </ul>
+                                </form>
+
+                        	</div>
+                            </div>
+                                   </nav>
+                         </div>
+    		                 </div>
+                           </div>
+
+                  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                      <form method="POST" action="{% url 'removedup' %}">
+                          {% csrf_token %}
+<button class="btn btn-info" name="duplicate" value="duplicate">Remove duplicated rows</button>
+                      </form>
+                  </div>
+
+
+                  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-3">
+                      		     <div class=" dropdown">
+                                     <button class="btn btn-info renamebtn" type="button">Rename columns
+                                     </button>
+                                <div class="dropdown-content">
+                                    <nav>
+                               <div class="row">
+                        	<div class="col-md-12">
+                     	    <ul class="nav nav-stacked">
+                                {% for i in colsnames %}
+                            <li>
+                                 <form role="form" method="POST" action="{% url 'rename' %}">
+                                    {% csrf_token %}
+                                    <div class="input-group">
+                                        <input type="text" value="{{ i }}" name="old_name" hidden>
+                                        <input  name="new_name" id="{{ i }}" class="form-control ren" style="border:none; outline:none;  width:250px; font-size:15px;" type="button" value=" {{ i }}" >
+                                        <span class="input-group-btn">
+                                       <button  name="clean" value="{{ dataid }}" class="btn btn-default {{ i }} ebtn" style="height:35px;" type="submit">
+                                     <i class="fa fa-arrow-right"></i>
+                                   </button>
+                                    </span>
+                                    </div>
+                                </form>
+                            </li>
+                                {% endfor %}
+                     	    </ul>
+                        	</div>
+                            </div>
+                                   </nav>
+                         </div>
+    		                 </div>
+                           </div>
+
+
+                  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                      		     <div class=" dropdown">
+                                     <button class="btn btn-info" type="button">Sort by
+                                     </button>
+                                <div class="dropdown-content">
+                                    <nav>
+                               <div class="row">
+                        	<div class="col-md-12">
+                     	    <ul class="nav nav-stacked">
+                            <li><a href="#">Remove</a></li>
+                            <li><a href="#">Fill Mean</a></li>
+                            <li><a href="#">Fill Median</a></li>
+                            <li><a href="#">Fill Zero</a></li>
+                     	    </ul>
+                        	</div>
+                            </div>
+                                   </nav>
+                         </div>
+    		                 </div>
+                           </div>
+
+             </div>
+              {% if dupid %}
+
+                 {% if nodup == 0 %}
+                  <div class="well">
+                      <p class="text-center h4 text-success">No duplicated rows</p>
+                 </div>
+                 {% endif %}
+                 {% if nodup > 0 %}
+                  <div class="well">
+                      <p class="text-center h4 text-danger">{{ nodup }} duplication(s) have been removed</p>
+                 </div>
+                 {% endif %}
+             {% endif %}
+         </div>
+     </main>
+ </div>
+</body>
+</html>

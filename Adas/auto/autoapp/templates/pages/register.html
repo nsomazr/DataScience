@@ -1,0 +1,87 @@
+<!--<!DOCTYPE html>-->
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adas</title>
+
+    <link href="{% static 'frameworks/bootstrap/dist/css/bootstrap.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'frameworks/font-awesome/css/font-awesome.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+     <main>
+             <div class="row main-homev">
+                <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xm-offset-6">
+                    <div class="panel panel-info forms">
+                        <div class="panel-heading">
+                            <h4 class="text-center">REGISTER</h4>
+                        </div>
+                        <div class="panel-body">
+                          <div class="form-group">
+                              <form role="form" method="POST" action="{% url 'register' %}">
+                                  {% csrf_token %}
+                                   <div class="row">
+                                      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                          <label class="control-label">First Name</label>
+                                          <span class="input-group">
+                                              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                              {{ registerform.fname }}
+                                          </span>
+                                      </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                          <label class="control-label">Last Name</label>
+                                          <span class="input-group">
+                                              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                            {{ registerform.lname }}
+                                          </span>
+                                      </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                          <label class="control-label">Email address</label>
+                                          <span class="input-group">
+                                              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                              {{ registerform.email }}
+                                          </span>
+                                      </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                          <label class="control-label">Userame</label>
+                                          <span class="input-group">
+                                              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                             {{ registerform.uname }}
+                                          </span>
+                                      </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                          <label class="control-label">Password</label>
+                                          <span class="input-group">
+                                              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                              {{ registerform.pwd}}
+                                          </span>
+                                      </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                          <label class="control-label">Confirm Password</label>
+                                          <span class="input-group">
+                                              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                            {{ registerform.cpwd }}
+                                          </span>
+                                      </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><br>
+                                          <a href="{% url 'home' %}" class="btn btn-danger btn-sm pull-left">Cancel</a>
+                                      </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-sm-6"><br>
+                                          <button type="submit" class="btn btn-info btn-sm pull-right">Submit</button>
+                                      </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-sm-12"><br>
+                                         <p class="text-center" style="color:red;">{{ merror }}</p>
+                                      </div>
+                                   </div>
+                              </form>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+     </main>
+ </div>
+
+</body>
+</html>

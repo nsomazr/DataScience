@@ -1,0 +1,185 @@
+<!--<!DOCTYPE html>-->
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adas</title>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+	<script type="text/javascript" src="{%  static 'frameworks/bootstrap/dist/js/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'frameworks/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <link href="{% static 'frameworks/bootstrap/dist/css/bootstrap.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'frameworks/font-awesome/css/font-awesome.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+</script>
+</head>
+ <div class="container-fluid">
+    <header>
+    	<nav  class="navbar navbar-default navbar-fixed-top">
+
+    		 <span class="navbar-header">
+    		 	<span class="navbar-brand" style="color:lightblue;">PARROTAI ADAS</span>
+    		 </span>
+
+    		      <ul class="nav navbar-nav">
+    		      	 <li><a href="{% url 'home' %}" id="lnk" active><i class="fa fa-home" style="padding-right:10px;"></i>Home</a>
+    		      	 <li><a href="{% url 'register' %}" id="lnk1">Register</a></li>
+                      <li><a href="{% url 'login' %}" id="lnk2"> Login</a></li>
+    		      	 <li><a href="{% url 'home' %}" id="lnk3"> About</a></li>
+	                <li><a href="#contact" id="lnk4"> Contact</a></li>
+    		      	 <li>
+    		      	 	     <ul class="nav search">
+                                    <li>
+    		      	 	<div class="input-group">
+    		      	 		<input type="search" name="search.html" class="form-control">
+    		      	 		<span class="input-group-addon">
+    		      	 		<a href=""><i class="fa fa-search"></i></a>
+    		      	 		</span>
+    		      	 	</div>
+                                    </li>
+    		      	 	</ul>
+    		      	 </li>
+
+    		      </ul>
+    	</nav>
+    	</header>
+     <main>
+         <div class="well home_footer" style="margin-top:5px;">
+<div class="container-fluid padding">
+
+	<div class="row  text-center padding">
+		<div class="col-12">
+			<h3 class="display-4">AUTOMATIC DATA ANALYSIS SYSTEM</h3>
+	    </div>
+	    <hr>
+	    <diV class="col-12">
+			<p class="lead">
+				We care your data
+			</p>
+		</div>
+	</div>
+</div>
+ <div class="container-fluid">
+    	<section>
+    		<div class="carousel slide" id="picha" data-ride="carousel" >
+    			<ol class="carousel-indicators">
+    				<li data-target="#picha" data-slide-to="0" class="active"></li>
+    				<li data-target="#picha" data-slide-to="1"></li>
+    				<li data-target="#picha" data-slide-to="2"></li>
+    			</ol>
+    			<div class="carousel-inner">
+    				<div class="item ">
+    					<img src="{% static 'images/img1.jpg' %}" alt="phone">
+    					<div class="carousel-caption">
+    						<h3 class="display-4">Call for support</h3>
+    					</div>
+    				</div>
+    					<div class="item active">
+    					<img src="{% static 'images/img2.jpg' %}" alt="phone">
+                            <div class="carousel-caption">
+    						<h3 class="display-4">Data for better future</h3>
+    					</div>
+    				</div>
+    					<div class="item">
+    					<img src="{% static 'images/img5.jpg' %}" alt="phone">
+                            <div class="carousel-caption">
+    						<h3 class="display-4">We analyse data for you</h3>
+    					</div>
+    				</div>
+    			</div><!-- end inner carouse-->
+    			<a href="#picha" class="left carousel-control" data-slide="prev">
+    				<span class="glyphicon glyphicon-chevron-left"></span>
+    			</a>
+    			<a href="#picha" class="right carousel-control" data-slide="next">
+    					<i class="glyphicon glyphicon-chevron-right"></i>
+    			</a>
+    		</div>
+    	</section>
+    </div>
+
+             <div class="home_footer" style="margin-top:30px;">
+               <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <p class="text-center h4">HOW THE SYSTEM WORKS</p>
+                        </div>
+                        <div class="panel-boy">
+
+                        </div>
+                    </div>
+                </div>
+                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                     <div class="panel panel-info">
+                         <div class="panel-heading">
+                             <p class="text-center h4">UPDATES</p>
+                         </div>
+                        <div class="panel-boy">
+
+                        </div>
+                    </div>
+                </div>
+                    </div>
+
+ <footer style="background-color:#e1f5fe;" id="contact">
+         <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
+                    <div class="panel-body">
+                    <span class='btn btnf' style='background-color:lightblue;'>PARROTAI</span><br><br>
+                     <span><i class="fa fa-link" style="color:lightblue; font-size:20px;"></i><span style="padding-left:10px;">Data science1</span></span>
+                     <hr style="width:0px;">
+                     <span ><i class="fa fa-link" style="color:blue; font-size:20px;"></i><span style="padding-left:10px;">Data science2</span></span>
+                     <hr style="width:0px;">
+                     <span><i class="fa fa-link" style="color:red; font-size:20px;"></i><span style="padding-left:10px;">Data science3</span></span>
+                     <hr style="width:0px;">
+                    </div>
+
+                </div>
+                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
+                     <div class="panel-body">
+                    <span class='btn btnf' style="background-color:lightblue; color:black;">Contact</span><br><br>
+                     <span><i class="fa fa-twitter" style="color:lightblue; font-size:20px;"></i><span style="padding-left:10px;">Twitter</span></span>
+                     <hr style="width:0px;">
+                     <span ><i class="fa fa-facebook" style="color:blue; font-size:20px;"></i><span style="padding-left:10px;">Facebook</span></span>
+                     <hr style="width:0px;">
+                     <span><i class="fa fa-google-plus" style="color:red; font-size:20px;"></i><span style="padding-left:10px;">Google+</span></span>
+                     <hr style="width:0px;">
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
+                    <div class="panel-body">
+                         <span class='btn btnf' style="background-color:lightblue;  color:black;">Subscribe for updates in data analysis</span>
+                    <div class="" style="margin-top:10px;">
+
+                        <div class="panel-body" style="background-color:#e1f5fe; border:none;" >
+                                <form method="POST" action="" class="form-group" role="form">
+                                    {% csrf_token %}
+                        <label class="control-label">Email Address</label>
+                          <span class="input-group">
+                            <span class="input-group-addon" style="background-color:lightblue; color:#fff;"><i class="fa fa-envelope"></i></span>
+                            <input class="form-control" type="email" placeholder="Email" name="semail">
+                          </span><br>
+                                    <button class="btn btn-xm pull-right" style="background-color:lightblue; color:#fff;"><i class="fa fa-send"></i></button>
+
+                    </form>
+                        </div>
+
+                    </div>
+                    </div>
+
+                </div>
+
+            </div>
+     </footer>
+
+        		</div>
+
+         </div>
+     </main>
+
+ </div>
+</body>
+</html>
